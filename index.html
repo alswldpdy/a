@@ -85,6 +85,8 @@
   <div class="wrap">
     <h1>락준사전</h1>
     <div class="subtitle">내 사랑이 좋아하는 것들을 모아둔 작은 도감</div>
+    <input id="search" placeholder="도감에서 찾기..." 
+       style="width:100%; padding:10px; border-radius:12px; border:1px solid #ddd; margin: 8px 0 16px;">
     <div class="hero">
      <img src="photo.png" alt="우리 사진" />
      <div class="count">
@@ -217,6 +219,30 @@
     const modal = document.getElementById("modal");
     const mTitle = document.getElementById("mTitle");
     const mBody = document.getElementById("mBody");
+    const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", (e) => {
+  const keyword = e.target.value.toLowerCase();
+  grid.innerHTML = "";
+  data
+    .filter(item =>
+      item.title.toLowerCase().includes(keyword) ||
+      item.tag.toLowerCase().includes(keyword) ||
+      item.body.toLowerCase().includes(keyword)
+    )
+    .forEach(item => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div class="tag">${item.tag}</div>
+        <div class="title">${item.title}</div>
+        <div class="desc">눌러서 자세히 보기</div>
+      `;
+      div.onclick = () => openModal(item);
+      grid.appendChild(div);
+    });
+});
+
 
     data.forEach(item => {
       const div = document.createElement("div");
