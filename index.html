@@ -64,6 +64,13 @@
   margin-top: 4px;
 }
 
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 260px;
+}
+
   </style>
 </head>
 <body>
@@ -71,7 +78,7 @@
     <h1>RJ사전</h1>
     <div class="subtitle">내가 제일 사랑하는 사람 기록장</div>
     <div class="hero">
-     <img src="photo.jpg" alt="우리 사진" />
+     <img src="photo.png" alt="우리 사진" />
      <div class="count">
        <div class="count-title">우리 기념일까지</div>
        <div id="countdown" class="count-num">D-0</div>
@@ -185,6 +192,11 @@
             <li>갖고 싶은 것: 빔프로젝터</li>
           </ul>
         `
+      },
+      {
+       tag: "기념",
+       title: "첫 만남",
+       body: `<p>2024년 3월 12일, 처음 만난 날.</p>`
       }
     ];
 
@@ -214,11 +226,13 @@
       modal.classList.remove("open");
     }
         // 기념일 날짜 설정 (YYYY-MM-DD 형식)
-    const anniversary = new Date("2025-11-28");
+   const anniversary = new Date("2025-11-28T00:00:00");
 
     function updateCountdown() {
       const now = new Date();
-      const diff = anniversary - now;
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const target = new Date(anniversary.getFullYear(), anniversary.getMonth(), anniversary.getDate());
+      const diff = target - today;
       const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
       const el = document.getElementById("countdown");
       if (!el) return;
