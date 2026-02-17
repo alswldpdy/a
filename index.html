@@ -9,6 +9,7 @@
     .wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
     h1 { margin: 8px 0 4px; }
     .subtitle { color: #5f7f6f; margin-bottom: 16px; }
+
     .card {
       background: #fff; border-radius: 14px; padding: 14px; cursor: pointer;
       box-shadow: 0 6px 14px rgba(0,0,0,.08); transition: transform .12s ease;
@@ -17,7 +18,7 @@
     .tag { display: inline-block; font-size: 12px; padding: 4px 8px; border-radius: 999px; background: #e6f2ed; color: #2f6b55; margin-bottom: 6px; }
     .title { font-weight: 700; margin: 6px 0 2px; }
     .desc { font-size: 12px; color: #666; }
-    
+
     .modal {
       position: fixed; inset: 0; background: rgba(0,0,0,.5);
       display: none; align-items: center; justify-content: center;
@@ -30,72 +31,72 @@
     .panel h3 { margin-top: 0; }
     ul { padding-left: 18px; }
     li { margin-bottom: 6px; }
+
     .hero {
-  margin: 16px 0 24px;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,.08);
-}
-.count {
-  margin-top: 12px;
-  text-align: center;
-}
-.count-title {
-  font-size: 12px;
-  color: #5f7f6f;
-}
-.count-num {
-  font-size: 22px;
-  font-weight: 800;
-  margin-top: 4px;
-}
-.hero img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  max-height: 260px;
-}
-.grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
-  gap: 12px; 
-}
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.close {
-  margin-top: 12px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: none;
-  background: #e6f2ed;
-  cursor: pointer;
-}
-.gallery {
-  margin: 16px 0 24px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-.gallery img {
-  width: 100%;
-    border-radius: 12px;
-  object-fit: cover;
-  max-height: 180px;
-}
-  bor전</div>
+      margin: 16px 0 24px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.08);
+    }
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .count { margin-top: 12px; text-align: center; }
+    .count-title { font-size: 12px; color: #5f7f6f; }
+    .count-num { font-size: 22px; font-weight: 800; margin-top: 4px; }
+
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+      gap: 12px; 
+    }
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .close {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      background: #e6f2ed;
+      cursor: pointer;
+    }
+
+    .gallery {
+      margin: 16px 0 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 180px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>서프라이즈!</h1>
+    <div class="subtitle">너만 보는 비밀 도감</div>
+
     <input id="search" placeholder="검색해서 찾기..." 
-       style="width:100%; padding:10px; border-radius:12px; border:1px solid #ddd; margin: 8px 0 16px;">
+      style="width:100%; padding:10px; border-radius:12px; border:1px solid #ddd; margin: 8px 0 16px;">
+
     <div class="hero">
-     <img src="photo.png" alt="우리 사진" />
-     <div class="count">
-       <div class="count-title">우리가 만난지</div>
-       <div id="countdown" class="count-num">D-0</div>
-     </div>
-   </div>
+      <img src="photo.png" alt="우리 사진" />
+      <div class="count">
+        <div class="count-title">우리가 만난지</div>
+        <div id="countdown" class="count-num">D-0</div>
+      </div>
+    </div>
 
     <div id="grid" class="grid"></div>
   </div>
@@ -108,10 +109,13 @@
     </div>
   </div>
 
-  <div class="gallery">
-  <img src="photo1.png" />
-  <img src="photo2.png" />
-</div>
+  <div class="wrap">
+    <div class="gallery">
+      <img src="photo1.png" />
+      <img src="photo2.png" />
+    </div>
+  </div>
+
 
   <script>
     const data = [
