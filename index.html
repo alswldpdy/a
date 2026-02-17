@@ -41,13 +41,6 @@
   box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
 
-.hero img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  max-height: 260px;
-}
-
 .count {
   margin-top: 12px;
   text-align: center;
@@ -71,12 +64,27 @@
   max-height: 260px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.close {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #e6f2ed;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>락준사전</h1>
-    <div class="subtitle">내가 제일 사랑하는 사람 기록장</div>
+    <div class="subtitle">내 사랑이 좋아하는 것들을 모아둔 작은 도감</div>
     <div class="hero">
      <img src="photo.png" alt="우리 사진" />
      <div class="count">
@@ -96,6 +104,11 @@
     </div>
   </div>
 
+  <div class="hero">
+  <img src="photo1.png" />
+  <img src="photo2.png" />
+</div>
+  
   <script>
     const data = [
       {
